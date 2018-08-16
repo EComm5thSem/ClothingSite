@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+a:link, a:visited
+{
+	color:white;
+	text-decoration:none;
+	position:absolute;
+	margin:77px 1px;
+}
+input[placeholder]
+{
+	font-family:garamond;
+	height:20px;
+	width:310px;
+	border-radius:5px;
+	font-size:20px;
+	border-color:cyan;
+}
+div
+{
+	opacity:1;
+	width:600px 600px;
+	border-radius:20px;
+	padding:200px;
+	margin:80px 465px;
+	position:absolute;
+	box-shadow: 0px 0px 20px 10px DimGrey;
+}
+.button {
+    background-color: Green; 
+    border: none;
+    color: white;
+    padding: 10px 132px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;	
+    font-family:constantia;
+    margin: 10px 1px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position:absolute;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid Cyan;
+}
+
+.button1:hover {
+    background-color: Cyan;
+    color: black;
+}
+</style>
+<script>
+
+    function validateForm() {
+
+        var name = document.LogIn.uid.value;
+
+        var pass = document.LogIn.pass.value;
+
+        if (name == null || name == "") {
+
+            alert("Please enter your username.");
+
+            return false;
+
+        }
+
+        if (pass.length < 6) {
+
+            alert("Please enter valid password.");
+
+            return false;
+
+        }
+
+        else if (name != "Admin" || pass != "password") {
+
+            alert("User name or password is not correct!");
+
+            return false;
+
+        }
+
+    }
+
+</script>
+</head>
+<body background="images\dark.jpg">
+<div>
+<h1 style="font-size:60px;font-family:garamond;position:absolute;margin:-185px -87px;color:white;">Login</h1>
+<p style="font-size:22px;font-family:constantia;position:absolute;margin:-90px -165px;color:white;">
+<b>Username</b> <br> <input type="email" name="email" id="email" placeholder="Enter e-mail here"><br><br>
+<b>Password</b> <br> <input type="password" name="password" id="password" placeholder="Enter password here"><br><br>
+<form name="LogIn" method="POST" action="loggedIn.html" onsubmit="return validateForm()">
+
+    <div>
+
+        <span>Username: </span>
+
+        <span><input class="input100" type="text" name="uid" placeholder="Username"></span>
+
+    </div>
+
+    <div>
+
+        <span>Password: </span>
+
+        <span><input class="input100" type="password" name="pass" placeholder="Password"></span>
+
+    </div>
+
+    <div>
+
+        <input type="submit" class="button button1" value="Log In">
+
+    </div>
+
+</form>
+
+<a href="" target="_blank">Forgot Password?</a></p>
+</div>
+</body>
+</html>
